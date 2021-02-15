@@ -3,7 +3,7 @@ import { routes } from '../../constants/routes';
 import { Home } from '../home';
 import { Requests } from '../requests';
 import { NoMatch } from '../noMatch';
-import '../../styles/App.css';
+import { GlobalStyle } from '../../styles/global';
 
 export const Root = () => {
 	return (
@@ -16,6 +16,7 @@ export const Root = () => {
 				<Route path={routes.requests} component={Requests} />
 				<Route path='*' component={NoMatch} />
 			</Switch>
+            <GlobalStyle />
 		</Router>
 	);
 };
