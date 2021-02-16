@@ -1,12 +1,10 @@
 import styled from 'styled-components';
+import { Page } from '../../index'
 
-export const Header = styled.header`
+export const Home = styled(Page)`
     display: flex;
     flex-direction: column;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    background: #115293;
-    color: white;
-    min-height: 64px;
-    font-size: calc(10px + 2vmin);
 `;

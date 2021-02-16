@@ -1,4 +1,4 @@
-export const Requests = () => {
+export const RequestsPage = () => {
 	return (
 		<div>
             Requests Page
