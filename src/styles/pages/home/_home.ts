@@ -7,4 +7,7 @@ export const Home = styled(Page)`
     width: 100%;
     align-items: center;
     justify-content: center;
+
+    z-index: 1;
+    position: relative;
 `;
