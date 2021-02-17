@@ -7,7 +7,7 @@ export const ModalContent = styled.div`
     transform: translate(-50%, -50%);
     z-index: 1000;
     min-width: 60vw;
-    min-height: 60vh;
+    height: 85vh;
 
     display: flex;
     flex-direction: column;
@@ -20,6 +20,8 @@ export const ModalContent = styled.div`
         justify-content: center;
         align-items: center;
         margin-bottom: 16px;
+        text-transform: uppercase;
+        font-size: 26px;
 
         button {
             margin-left: auto;

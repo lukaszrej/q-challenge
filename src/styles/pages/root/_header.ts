@@ -8,5 +8,9 @@ export const Header = styled.header`
     background: #115293;
     color: white;
     min-height: 64px;
-    font-size: calc(10px + 2vmin);
+
+    h1 {
+        font-size: calc(10px + 2vmin);
+        cursor: pointer;
+    }
 `;

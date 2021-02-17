@@ -14,6 +14,7 @@ export const Button = styled.button`
     outline: none;
     font-size: ${props => props.theme.large ? '25px' : 'initial'};
     padding: ${props => props.theme.large ? '32px' : 'initial'};
+    cursor: pointer;
 
 	&:hover {
 		background: ${props => props.theme.rounded ? 'none' : '#1976d2'};

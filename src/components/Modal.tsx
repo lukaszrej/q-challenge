@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { Button } from './Button';
-import { ModalContent, ModalOverlay, Divider, CloseIcon } from '../styles';
+import { ModalContent, ModalOverlay, Divider, CloseIcon, ScrollWrapper } from '../styles';
 
 interface IProps {
 	open: boolean;
@@ -18,6 +18,7 @@ export const Modal = (props: IProps) => {
 	return createPortal(
         <>
             <ModalOverlay />
+
             <ModalContent>
                 <header>
                     <h2>{ title }</h2>
@@ -28,9 +29,9 @@ export const Modal = (props: IProps) => {
 
                 <Divider />
 
-                <main>
+                <ScrollWrapper>
                     {children}
-                </main>
+                </ScrollWrapper>
             </ModalContent>
         </>,
         document.getElementById('portal') as HTMLElement

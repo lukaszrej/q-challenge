@@ -1,4 +1,4 @@
-[
+export const categories = [
     {
         "groupId": 6,
         "familyId": 11,
