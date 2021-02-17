@@ -1,20 +1,28 @@
+import { ReactNode } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { Button as StyledButton } from '../styles';
 
 interface IProps {
-    label: string;
-    onClickHandler: () => void;
+	onClickHandler: () => void;
+	label?: string;
+	children?: ReactNode;
+    rounded?: boolean;
+    large?: boolean;
 }
 
 export const Button = (props: IProps) => {
-    const { label, onClickHandler } = props;
+	const { onClickHandler, label, children, rounded, large } = props;
 
-    const handleButtonClick = () => {    
-        onClickHandler && onClickHandler();
-    };
+	const handleButtonClick = () => {
+		onClickHandler && onClickHandler();
+	};
 
 	return (
-		<StyledButton onClick={handleButtonClick}>
-            { label }
-		</StyledButton>
+        <ThemeProvider theme={{rounded, large}}>
+            <StyledButton onClick={handleButtonClick}>
+                {label}
+                {children}
+            </StyledButton>
+        </ThemeProvider>
 	);
 };

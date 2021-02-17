@@ -12,14 +12,21 @@ export const ModalContent = styled.div`
     display: flex;
     flex-direction: column;
     background: white;
+    padding: 24px;
 
     & header {
         width: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
+        margin-bottom: 16px;
 
         button {
             margin-left: auto;
         }
+    }
+
+    & main {
+        margin-top: 16px;
     }
 `;

@@ -20,6 +20,7 @@ export const HomePage = () => {
             <Button 
                 label={START_INQUIRY} 
                 onClickHandler={handleStartInquiry}
+                large
             />
 
             <Modal 

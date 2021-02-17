@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import { ModalContent, ModalOverlay } from '../styles';
+import { Button } from './Button';
+import { ModalContent, ModalOverlay, Divider, CloseIcon } from '../styles';
 
 interface IProps {
 	open: boolean;
@@ -20,8 +21,12 @@ export const Modal = (props: IProps) => {
             <ModalContent>
                 <header>
                     <h2>{ title }</h2>
-                    <button onClick={onClose}>Close</button>
+                    <Button onClickHandler={onClose} rounded>
+                        <CloseIcon />
+                    </Button>
                 </header>
+
+                <Divider />
 
                 <main>
                     {children}
