@@ -13,10 +13,15 @@ interface IProps {
 export const Categories = (props: IProps) => {
     const { categories } = props;
     const [userInput, setUserInput] = useState('');
+    const [display, setDisplay] = useState(false);
     const [inputRef] = useInputFocus();
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setUserInput(e.currentTarget.value);
+
+        e.currentTarget.value
+            ? setDisplay(true)
+            : setDisplay(false);
     };
 
     const debouncedUserInput = useDebounce(userInput, 300);
@@ -31,20 +36,22 @@ export const Categories = (props: IProps) => {
                 ref={inputRef}
             />
 
-            <CategoryList>
-                {categories.map(category => {
-                    const filteredProducts = category.products.filter(product => 
-                        product.name.toLowerCase().indexOf(debouncedUserInput.toLowerCase()) > -1);
+            {display && 
+                <CategoryList>
+                    {categories.map(category => {
+                        const filteredProducts = category.products.filter(product => 
+                            product.name.toLowerCase().indexOf(debouncedUserInput.toLowerCase()) > -1);
 
-                    return (
-                        <li key={category.groupId}>
-                            {category.products.length > 0 && `${CATEGORY} ${category.name} #${category.groupId}`}
+                        return (
+                            <li key={category.groupId}>
+                                {category.products.length > 0 && `${CATEGORY} ${category.name} #${category.groupId}`}
 
-                            <Products filteredProducts={filteredProducts} />
-                        </li>
-                    )
-                } )}
-            </CategoryList>
+                                <Products filteredProducts={filteredProducts} />
+                            </li>
+                        )
+                    } )}
+                </CategoryList>
+            }
         </>
     )
 }
