@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/q-challenge/static/js/main.54056e34.chunk.js",
+    "main.js.map": "/q-challenge/static/js/main.54056e34.chunk.js.map",
+    "runtime-main.js": "/q-challenge/static/js/runtime-main.53e2eb15.js",
+    "runtime-main.js.map": "/q-challenge/static/js/runtime-main.53e2eb15.js.map",
+    "static/js/2.1ed92dbf.chunk.js": "/q-challenge/static/js/2.1ed92dbf.chunk.js",
+    "static/js/2.1ed92dbf.chunk.js.map": "/q-challenge/static/js/2.1ed92dbf.chunk.js.map",
+    "index.html": "/q-challenge/index.html",
+    "static/js/2.1ed92dbf.chunk.js.LICENSE.txt": "/q-challenge/static/js/2.1ed92dbf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53e2eb15.js",
+    "static/js/2.1ed92dbf.chunk.js",
+    "static/js/main.54056e34.chunk.js"
+  ]
+}
