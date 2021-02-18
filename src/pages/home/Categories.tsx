@@ -41,12 +41,9 @@ export const Categories = (props: IProps) => {
                     {categories.map(category => {
                         const filteredProducts = category.products.filter(product => 
                             product.name.toLowerCase().indexOf(debouncedUserInput.toLowerCase()) > -1);
-
                         return (
                             <li key={category.groupId}>
-                                {category.products.length > 0 && `${CATEGORY} ${category.name} #${category.groupId}`}
-
-                                <Products filteredProducts={filteredProducts} />
+                                <Products filteredProducts={filteredProducts} categories={categories} />
                             </li>
                         )
                     } )}
