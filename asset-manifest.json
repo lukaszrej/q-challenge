@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/q-challenge/static/js/main.e128d74b.chunk.js",
-    "main.js.map": "/q-challenge/static/js/main.e128d74b.chunk.js.map",
+    "main.js": "/q-challenge/static/js/main.11fe0adb.chunk.js",
+    "main.js.map": "/q-challenge/static/js/main.11fe0adb.chunk.js.map",
     "runtime-main.js": "/q-challenge/static/js/runtime-main.53e2eb15.js",
     "runtime-main.js.map": "/q-challenge/static/js/runtime-main.53e2eb15.js.map",
-    "static/js/2.1ed92dbf.chunk.js": "/q-challenge/static/js/2.1ed92dbf.chunk.js",
-    "static/js/2.1ed92dbf.chunk.js.map": "/q-challenge/static/js/2.1ed92dbf.chunk.js.map",
+    "static/js/2.a9f08107.chunk.js": "/q-challenge/static/js/2.a9f08107.chunk.js",
+    "static/js/2.a9f08107.chunk.js.map": "/q-challenge/static/js/2.a9f08107.chunk.js.map",
     "index.html": "/q-challenge/index.html",
-    "static/js/2.1ed92dbf.chunk.js.LICENSE.txt": "/q-challenge/static/js/2.1ed92dbf.chunk.js.LICENSE.txt"
+    "static/js/2.a9f08107.chunk.js.LICENSE.txt": "/q-challenge/static/js/2.a9f08107.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.53e2eb15.js",
-    "static/js/2.1ed92dbf.chunk.js",
-    "static/js/main.e128d74b.chunk.js"
+    "static/js/2.a9f08107.chunk.js",
+    "static/js/main.11fe0adb.chunk.js"
   ]
 }
