@@ -4,7 +4,7 @@ export const Button = styled.button`
 	color: #fff;
 	text-transform: uppercase;
 	text-decoration: none;
-	background: #2196f3;
+	background: rgb(0, 168, 204);
     border-radius: ${props => props.theme.rounded ? '50%' : '4px'};
     background: ${props => props.theme.rounded ? 'transparent' : ''};
 	display: inline-block;
@@ -17,7 +17,7 @@ export const Button = styled.button`
     cursor: pointer;
 
 	&:hover {
-		background: ${props => props.theme.rounded ? 'none' : '#1976d2'};
+		background: ${props => props.theme.rounded ? 'none' : '#115293'};
 		-webkit-box-shadow: ${props => props.theme.rounded ? '' : '5px 40px -10px rgba(0, 0, 0, 0.57)'};
 		-moz-box-shadow: ${props => props.theme.rounded ? '' : '5px 40px -10px rgba(0, 0, 0, 0.57)'};
 		box-shadow: ${props => props.theme.rounded ? '' : '5px 40px -10px rgba(0, 0, 0, 0.57)'};

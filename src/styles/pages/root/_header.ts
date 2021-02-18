@@ -8,7 +8,7 @@ export const Header = styled.header`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: #115293;
+    background: linear-gradient(270deg, #115293 0%, rgb(0, 168, 204) 55%);
 	color: white;
 	min-height: 64px;
 
