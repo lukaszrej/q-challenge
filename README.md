@@ -4,12 +4,14 @@ It is a simple app. For more details check the description in the ```coding-task
 
 ## Demo :rocket:
 
-[demo will be here](https://lukaszrej.github.io/q-challenge/)
+Work still in progress... [current demo here](https://lukaszrej.github.io/q-challenge/)
 
 ### Technologies and libraries
 
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Styled-Components](https://styled-components.com/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 ### Configuration
 
