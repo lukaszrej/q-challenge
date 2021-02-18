@@ -1,11 +1,10 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '../../components/Button';
 import { Modal } from '../../components/Modal';
 import { Categories } from './Categories';
-import { Home } from '../../styles';
 import { Category } from '../../types/category';
-import { categories as fetchedCategories } from '../../data/data';
+import { fetchData } from '../../api/fetchData';
+import { Home } from '../../styles';
 import { START_INQUIRY, DIRECT_REQUEST } from '../../constants/constants';
 
 export const HomePage = () => {
@@ -21,7 +20,7 @@ export const HomePage = () => {
 	};
 
 	useEffect(() => {
-		setCategories(fetchedCategories);
+        fetchData('data.json', setCategories);
 	}, []);
 
 	return (
