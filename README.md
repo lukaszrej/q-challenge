@@ -2,10 +2,6 @@
 
 It is a simple app. For more details check the description in the ```coding-task.md``` file in the root directory.
 
-## Demo :rocket:
-
-Work still in progress... [current demo here](https://lukaszrej.github.io/q-challenge/)
-
 ### Technologies and libraries
 
 - [React](https://reactjs.org/)
