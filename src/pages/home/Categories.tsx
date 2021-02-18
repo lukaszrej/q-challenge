@@ -1,6 +1,8 @@
+import { useState, ChangeEvent } from 'react';
 import { Category } from '../../types/category';
-import { CategoryList, ProductList } from '../../styles';
-import { CATEGORY } from '../../constants/constants';
+import { Input, CategoryList } from '../../styles';
+import { CATEGORY, MACHINE_NAME } from '../../constants/constants';
+import { Products } from './Products';
 
 interface IProps { 
     categories: Category[];
@@ -8,23 +10,34 @@ interface IProps {
 
 export const Categories = (props: IProps) => {
     const { categories } = props;
-    
+    const [userInput, setUserInput] = useState('');
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setUserInput(e.currentTarget.value);
+    };
+
     return (
         <>
-            <CategoryList>
-                {categories.map(category => (
-                    <li key={category.groupId}>
-                        {CATEGORY} {category.name} #{category.groupId}
+            <Input 
+                type="text"
+                value={userInput}
+                onChange={handleChange}
+                placeholder={MACHINE_NAME}
+            />
 
-                        <ProductList>
-                            {category.products.map(product => (
-                                <li key={product.typeId}>
-                                    {product.name}
-                                </li>
-                            ))}
-                        </ProductList>
-                    </li>
-                ))}
+            <CategoryList>
+                {categories.map(category => {
+                    const filteredProducts = category.products.filter(product => 
+                        product.name.toLowerCase().indexOf(userInput.toLowerCase()) > -1);
+
+                    return (
+                        <li key={category.groupId}>
+                            {category.products.length > 0 && `${CATEGORY} ${category.name} #${category.groupId}`}
+
+                            <Products filteredProducts={filteredProducts} />
+                        </li>
+                    )
+                } )}
             </CategoryList>
         </>
     )

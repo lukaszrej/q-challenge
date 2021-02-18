@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
 export const ScrollWrapper = styled.div`
-    overflow: auto;
+    overflow-y: auto;
     height: 100%;
 `;
