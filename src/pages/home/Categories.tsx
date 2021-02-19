@@ -4,9 +4,9 @@ import { Category } from '../../types/category';
 import { useInputFocus } from '../../hooks/useInputFocus';
 import { useDebounce } from '../../hooks/useDebounce';
 import { Input, CategoryList } from '../../styles';
-import { CATEGORY, MACHINE_NAME } from '../../constants/constants';
+import { MACHINE_NAME } from '../../constants/constants';
 
-interface IProps { 
+interface IProps {
     categories: Category[];
 }
 
@@ -28,7 +28,7 @@ export const Categories = (props: IProps) => {
 
     return (
         <>
-            <Input 
+            <Input
                 type="text"
                 value={userInput}
                 onChange={handleChange}
@@ -36,17 +36,17 @@ export const Categories = (props: IProps) => {
                 ref={inputRef}
             />
 
-            {display && 
+            {display &&
                 <CategoryList>
                     {categories.map(category => {
-                        const filteredProducts = category.products.filter(product => 
+                        const filteredProducts = category.products.filter(product =>
                             product.name.toLowerCase().indexOf(debouncedUserInput.toLowerCase()) > -1);
                         return (
                             <li key={category.groupId}>
                                 <Products filteredProducts={filteredProducts} categories={categories} />
                             </li>
                         )
-                    } )}
+                    })}
                 </CategoryList>
             }
         </>

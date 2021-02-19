@@ -4,6 +4,7 @@ export const Header = styled.header`
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
+	z-index: 2;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
