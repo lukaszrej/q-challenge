@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../../components/Button';
 import { Modal } from '../../components/Modal';
-import { Categories } from './Categories';
+import { ModalContent } from './ModalContent';
 import { Category } from '../../types/category';
 import { fetchData } from '../../api/fetchData';
 import { Home } from '../../styles';
@@ -28,7 +28,7 @@ export const HomePage = () => {
 			<Button label={START_INQUIRY} onClickHandler={handleStartInquiry} large />
 
 			<Modal open={isModalOpen} title={DIRECT_REQUEST} onClose={handleClose}>
-				<Categories categories={categories} />
+				<ModalContent categories={categories} />
 			</Modal>
 		</Home>
 	);

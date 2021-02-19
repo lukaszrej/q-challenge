@@ -3,14 +3,14 @@ import { Products } from './Products';
 import { Category } from '../../types/category';
 import { useInputFocus } from '../../hooks/useInputFocus';
 import { useDebounce } from '../../hooks/useDebounce';
-import { Input, CategoryList } from '../../styles';
-import { MACHINE_NAME } from '../../constants/constants';
+import { Input, Categories } from '../../styles';
+import { MACHINE_NAME, CATEGORY } from '../../constants/constants';
 
 interface IProps {
     categories: Category[];
 }
 
-export const Categories = (props: IProps) => {
+export const ModalContent = (props: IProps) => {
     const { categories } = props;
     const [userInput, setUserInput] = useState('');
     const [display, setDisplay] = useState(false);
@@ -37,17 +37,19 @@ export const Categories = (props: IProps) => {
             />
 
             {display &&
-                <CategoryList>
+                <Categories>
                     {categories.map(category => {
                         const filteredProducts = category.products.filter(product =>
                             product.name.toLowerCase().indexOf(debouncedUserInput.toLowerCase()) > -1);
+
                         return (
-                            <li key={category.groupId}>
-                                <Products filteredProducts={filteredProducts} categories={categories} />
-                            </li>
+                            <section key={category.groupId}>
+                                <header>{CATEGORY}: {category.name}</header>
+                                <Products filteredProducts={filteredProducts} />
+                            </section>
                         )
                     })}
-                </CategoryList>
+                </Categories>
             }
         </>
     )
