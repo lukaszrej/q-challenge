@@ -43,7 +43,7 @@ export const ModalContent = (props: IProps) => {
                             product.name.toLowerCase().indexOf(debouncedUserInput.toLowerCase()) > -1);
 
                         return (
-                            <section key={category.groupId}>
+                            <section key={category.id}>
                                 <header>{CATEGORY}: {category.name}</header>
                                 <Products filteredProducts={filteredProducts} />
                             </section>
