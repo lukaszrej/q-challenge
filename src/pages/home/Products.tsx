@@ -10,7 +10,7 @@ export const Products = (props: IProps) => {
 
     return (
         <ProductList>
-            {filteredProducts.map(product => <li key={product.typeId}>{product.name}</li>)}
+            {filteredProducts.map(product => <li key={product.id}>{product.name}</li>)}
         </ProductList>
     );
 };

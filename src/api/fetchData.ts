@@ -16,10 +16,18 @@ export const fetchData = async (url: string, action: Dispatch<SetStateAction<Cat
 
 const dtoToObj = (DTO: CategoryDTO[]) => {
     return DTO.map(category => {
+        const products = category.products.map(product => {
+            return {
+                id: product.typeId,
+                name: product.name,
+                categoryId: product.groupId
+            };
+        });
+
         return {
             id: category.groupId,
             name: category.name,
-            products: category.products
+            products
         };
     });
 }
