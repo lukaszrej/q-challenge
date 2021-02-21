@@ -1,16 +1,16 @@
-import { Product } from '../../types/product';
-import { ProductList } from '../../styles';
+import { Product, ProductDTO } from '../../types/product';
+import { Products as StyledProducts } from '../../styles';
 
 interface IProps {
-    filteredProducts: Product[];
+    products: any;
 }
 
 export const Products = (props: IProps) => {
-    const { filteredProducts } = props;
+    const { products } = props;
 
     return (
-        <ProductList>
-            {filteredProducts.map(product => <li key={product.id}>{product.name}</li>)}
-        </ProductList>
+        <StyledProducts>
+            {products?.map((item: ProductDTO) => <li key={item?.typeId}>{item?.name}</li>)}
+        </StyledProducts>
     );
 };

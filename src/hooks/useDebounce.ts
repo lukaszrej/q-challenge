@@ -6,13 +6,13 @@ export const useDebounce = (value: string, delay: number) => {
 	useEffect(
 		() => {
 			const handler = setTimeout(() => {
-				setDebouncedValue(value);
+                setDebouncedValue(value);
 			}, delay);
 			return () => {
 				clearTimeout(handler);
 			};
 		},
-		[ value ]
+		[ value, delay ]
 	);
 
 	return debouncedValue;

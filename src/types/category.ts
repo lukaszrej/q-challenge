@@ -10,5 +10,8 @@ export interface CategoryDTO {
 export interface Category {
 	id: number;
 	name: string;
-	products: Product[];
+	products: {
+        id: number;
+        name: string;
+    };
 }

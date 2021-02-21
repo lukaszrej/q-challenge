@@ -1,20 +1,17 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 import { Products } from './Products';
 import { Category } from '../../types/category';
 import { useInputFocus } from '../../hooks/useInputFocus';
 import { useDebounce } from '../../hooks/useDebounce';
 import { Input, Categories } from '../../styles';
-import { MACHINE_NAME, CATEGORY } from '../../constants/constants';
+import { MACHINE_NAME } from '../../constants/constants';
+import { fetchData } from '../../api/fetchData';
 
-interface IProps {
-    categories: Category[];
-}
-
-export const ModalContent = (props: IProps) => {
-    const { categories } = props;
+export const ModalContent = () => {
     const [userInput, setUserInput] = useState('');
     const [display, setDisplay] = useState(false);
     const [inputRef] = useInputFocus();
+	const [categories, setCategories] = useState<Category[]>([]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setUserInput(e.currentTarget.value);
@@ -24,7 +21,11 @@ export const ModalContent = (props: IProps) => {
             : setDisplay(false);
     };
 
-    const debouncedUserInput = useDebounce(userInput, 300);
+    const debouncedUserInput = useDebounce(userInput, 600);
+
+	useEffect(() => {
+        fetchData('data.json', setCategories, debouncedUserInput);
+	}, [debouncedUserInput]);
 
     return (
         <>
@@ -38,17 +39,13 @@ export const ModalContent = (props: IProps) => {
 
             {display &&
                 <Categories>
-                    {categories.map(category => {
-                        const filteredProducts = category.products.filter(product =>
-                            product.name.toLowerCase().indexOf(debouncedUserInput.toLowerCase()) > -1);
-
+                    {categories?.map(category => {
                         return (
                             <section key={category.id}>
-                                <header>{CATEGORY}: {category.name}</header>
-                                <Products filteredProducts={filteredProducts} />
+                                <Products products={category.products} />
                             </section>
                         )
-                    })}
+                    })}                 
                 </Categories>
             }
         </>
