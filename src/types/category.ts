@@ -12,16 +12,3 @@ export interface Category {
 	name: string;
 	products: Product[];
 }
-
-// export interface ProductDTO {
-//     groupId: number;
-//     typeId: number;
-//     name: string;
-// }
-
-// export interface Product {
-//     id: number;
-//     name: string;
-//     categoryId: number;
-//     categoryName: string;
-// }
