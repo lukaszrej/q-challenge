@@ -24,7 +24,7 @@ export const ModalContent = () => {
     const debouncedUserInput = useDebounce(userInput, 600);
 
 	useEffect(() => {
-        fetchData('data.json', setCategories, debouncedUserInput);
+        fetchData('data.json', debouncedUserInput, setCategories);
 	}, [debouncedUserInput]);
 
     return (
@@ -39,7 +39,7 @@ export const ModalContent = () => {
 
             {display &&
                 <Categories>
-                    {categories?.map(category => {
+                    {categories.map(category => {
                         return (
                             <section key={category.id}>
                                 <Products products={category.products} />

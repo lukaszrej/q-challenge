@@ -1,8 +1,8 @@
-import { Product, ProductDTO } from '../../types/product';
+import { Product } from '../../types/product';
 import { Products as StyledProducts } from '../../styles';
 
 interface IProps {
-    products: any;
+    products: Product[];
 }
 
 export const Products = (props: IProps) => {
@@ -10,7 +10,7 @@ export const Products = (props: IProps) => {
 
     return (
         <StyledProducts>
-            {products?.map((item: ProductDTO) => <li key={item?.typeId}>{item?.name}</li>)}
+            {products.map(product => <li key={product.id}>{product.name}</li>)}
         </StyledProducts>
     );
 };
