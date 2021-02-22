@@ -42,6 +42,9 @@ export const ModalContent = () => {
                     {categories.map(category => {
                         return (
                             <section key={category.id}>
+                                {category.products.length > 0 && 
+                                    <header>{category.name}</header>
+                                }
                                 <Products products={category.products} />
                             </section>
                         )
