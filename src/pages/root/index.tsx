@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import { routes } from '../../constants/routes';
 import { Container } from './container';
 import { HomePage } from '../home';
 import { NoMatchPage } from '../noMatch';
-import { GlobalStyle } from '../../styles/global';
+import { GlobalStyle } from '../../styles/globalStyle';
 
 export const Root = () => {
 	return (
@@ -11,10 +10,10 @@ export const Root = () => {
 			<GlobalStyle />
 			<Container>
 				<Switch>
-					<Redirect exact from='/' to={routes.home} />
-					<Redirect exact from='/.' to={routes.home} />
-					<Redirect exact from='/q-challenge/' to={routes.home} />
-					<Route path={routes.home} component={HomePage} />
+					<Redirect exact from='/' to='/home' />
+					<Redirect exact from='/.' to='/home' />
+					<Redirect exact from='/q-challenge/' to='/home' />
+					<Route path='/home' component={HomePage} />
 					<Route path='*' component={NoMatchPage} />
 				</Switch>
 			</Container>

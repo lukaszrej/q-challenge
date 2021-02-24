@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Products = styled.ul`
+export const StyledProducts = styled.ul`
     & li {
         font-size: 16px;
         font-weight: normal;

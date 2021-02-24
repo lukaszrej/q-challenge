@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '../../components/Button';
 import { Modal } from '../../components/Modal';
 import { ModalContent } from './ModalContent';
-import { Home } from '../../styles';
+import { Home } from '../../styles/pages/home/home';
 import { START_INQUIRY, DIRECT_REQUEST } from '../../constants/constants';
 
 export const HomePage = () => {
@@ -18,11 +18,13 @@ export const HomePage = () => {
 
 	return (
 		<Home>
-			<Button label={START_INQUIRY} onClickHandler={handleStartInquiry} large />
+			<Button label={START_INQUIRY} onClick={handleStartInquiry} large />
 
-			<Modal open={isModalOpen} title={DIRECT_REQUEST} onClose={handleClose}>
-				<ModalContent />
-			</Modal>
+			{isModalOpen && 
+				<Modal open={isModalOpen} title={DIRECT_REQUEST} onClose={handleClose}>
+					<ModalContent />
+				</Modal>
+			}
 		</Home>
 	);
 };

@@ -3,7 +3,8 @@ import { Products } from './Products';
 import { Category } from '../../types/category';
 import { useInputFocus } from '../../hooks/useInputFocus';
 import { useDebounce } from '../../hooks/useDebounce';
-import { Input, Categories } from '../../styles';
+import { Categories } from '../../styles/pages/home/categories';
+import { Input } from '../../components/Input';
 import { MACHINE_NAME } from '../../constants/constants';
 import { fetchData } from '../../api/fetchData';
 

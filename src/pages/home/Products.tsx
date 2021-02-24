@@ -1,5 +1,5 @@
 import { Product } from '../../types/product';
-import { Products as StyledProducts } from '../../styles';
+import { StyledProducts } from '../../components/StyledProducts';
 
 interface IProps {
     products: Product[];

@@ -1,15 +1,18 @@
+import { ReactNode } from "react";
 import { useHistory } from "react-router-dom";
-import { routes } from '../../../constants/routes';
-import { IProps } from './types';
-import { Header } from '../../../styles'
-import { APP_HEADER } from '../../../constants/constants';
+import { Header } from '../../components/Header'
+import { APP_HEADER } from '../../constants/constants';
+
+export interface IProps {
+    children: ReactNode;
+}
 
 export const Container = (props: IProps) => {
     const { children } = props;
     let history = useHistory();
 
     const onLogoClick = () => {
-        history.push(routes.home)
+        history.push('/home')
     };
 
     return (

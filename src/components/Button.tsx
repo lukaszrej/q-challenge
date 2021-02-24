@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Button as StyledButton } from '../styles';
+import { StyledButton } from './StyledButton';
 
 interface IProps {
-	onClickHandler: () => void;
+	onClick: () => void;
 	label?: string;
 	children?: ReactNode;
     rounded?: boolean;
@@ -11,10 +11,10 @@ interface IProps {
 }
 
 export const Button = (props: IProps) => {
-	const { onClickHandler, label, children, rounded, large } = props;
+	const { onClick, label, children, rounded, large } = props;
 
 	const handleButtonClick = () => {
-		onClickHandler && onClickHandler();
+		onClick && onClick();
 	};
 
 	return (

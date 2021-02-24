@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Page } from '../../index'
+import { Page } from '../../../components/Page'
 
 export const Home = styled(Page)`
     display: flex;
